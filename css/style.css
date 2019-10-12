@@ -96,7 +96,7 @@ header img {
 .works {
     background: deepskyblue;
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 7rem 1rem;
 }
 
 .works h2 {
@@ -155,6 +155,15 @@ header img {
     font-size: 4rem;
     padding: 1.5rem;
     color: rgb(225, 228, 233);
+}
+
+section.footer {
+    background-color: #444;
+    padding: 1% 0% 1% 42%;
+}
+
+section.footer a {
+    margin: 15px 0px;
 }
 
 
