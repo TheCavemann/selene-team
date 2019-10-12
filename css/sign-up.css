@@ -41,7 +41,7 @@ a:hover {
     width: 50%;
     height: 100%;
     float: left;
-    background-image: url(../imgs/bg.jpg);
+    background-image: url(../img/bg.jpg);
     border-top: 790px solid transparent;
     border-right: 100px solid #fff;
 }
