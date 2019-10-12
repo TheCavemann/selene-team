@@ -89,88 +89,117 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en">
     <head>
+        
+        <!-- required meta tags -->
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
+        <title>Team Selene | NetWorth Calculator</title>
         
         
-
-        <!-- Primary Meta Tags -->
-  <title>Team Selene | NetWorth Calculator</title>
-
-
-
-        <!-- Add icon library -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
+        <!-- google roboto font -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
+        
+        <!-- bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+        
+        <!-- style.css -->
+        <link rel="stylesheet" href="css/login.css">
     </head>
+    
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <section class="container">
-            <div class="heading-primary">
-                <h1>NetWorth <br />Calculator</h1>
+        
+        <!-- LOGIN -->
+        <section id="login-page">
+        
+            <!-- Login right side with diagonal BG parallax -->
+            <div id="login-bg-diagonal" class="bg-parallax d-none d-md-block">
+                <div id="heading-primary">
+                    <h1>NetWorth <br />Calculator</h1>
+                </div>
             </div>
-            <div class="login__container">
-                <div class="wrapper">
-        <h2>Login</h2>
-        <?php 
             
-
-            if(isset($_SESSION["success_message"]) == true) {
-                echo '<p class="color-green">';
-                echo $_SESSION["success_message"]; // Or show the box, or whatever
-                echo '</p>';
-            }else {
-                echo '<p>';
-                echo 'Please fill in your credentials to login.';
-                echo '</p>' ;
-            }
-            $_SESSION["success_message"] = null; // Clean up 
-            ?>
-        <!-- <p>Please fill in your credentials to login.</p> -->
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-
-            <div class="form__group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">  
-                <div class="input-container"> 
-                    <i class="fa fa-user icon"></i>             
-                    <input type="email" name="username" class="form__input" value="<?php echo $username; ?>" placeholder="email" require>
-                    <label class="form__label">Email</label>
-                </div>
+            <!-- Login left side with content -->
+            <div class="container login-cont">
                 
-                <span class="help-block color-red"><?php echo $username_err; ?></span>
-            </div>  
+                <div class="parent">
+                    <div class="row insideParent d-flex justify-content-center">
+                        <div class="col-md-10 right-side">
+                            <div id="content-box">
 
-            <div class="form__group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>"> 
-                <div class="input-container"> 
-                    <i class="fa fa-key icon"></i>               
-                    <input type="password" name="password" class="form__input" placeholder="password">
-                    <label class="form__label">Password</label>
+                                <div id="heading-primary-right" class="d-md-none">
+                                    <h1>NetWorth <br />Calculator</h1>
+                                </div>
+                                <div id="content-box-outer">
+                                    <div id="content-box-inner">
+                                        <h4>Login</h4>
+                                        <?php 
+                                            if(isset($_SESSION["success_message"]) == true) {
+                                                echo '<p class="color-green">';
+                                                echo $_SESSION["success_message"]; // Or show the box, or whatever
+                                                echo '</p>';
+                                            }else {
+                                                echo '<p>';
+                                                echo 'Please fill in your credentials to login.';
+                                                echo '</p>' ;
+                                            }
+                                            $_SESSION["success_message"] = null; // Clean up 
+                                        ?>
+
+                                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                                            <div class="form-group mt-5 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                                                <input type="email" class="form-control input-field" id="email" name="username" value="<?php echo $username; ?>" placeholder="Enter Email Address" required>
+                                                <span class="help-block color-red"><?php echo $username_err; ?></span>
+                                            </div>
+                                            <div class="form-group mt-4 <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                                                <input type="password" class="form-control input-field" id="pwd" name="password"  placeholder="Enter Password" required>
+                                                <span class="help-block color-red"><?php echo $password_err; ?></span>
+                                            </div>
+                                            <div class="container mt-4">
+                                                <div class="row d-flex justify-content-between">
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                          <input class="form-check-input" type="checkbox"> Remember me
+                                                        </label>
+                                                    </div>
+                                                    <div class="reset-pwd">
+                                                        <a href="forgot_password.php">Forgot Password ?</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" name="submit" class="mt-4 col-3 btn btn-primary btn-lg submit-button">Login</button>
+                                        </form>
+                                        <div class="opp-page mt-4">
+                                            <p>Don't have an account? <a href="sign-up.php">Sign Up Now</a></p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <span class="help-block color-red"><?php echo $password_err; ?></span>
+
             </div>
-            <div class="form__group">
-                <input type="submit" class="btn btn--blue" value="Login">
-                <span><a href="forgot_password.php">Forgot Password?</a></span>
-            </div>
-            <p>Don't have an account? <a class="links" href="sign-up.php">Sign up now</a>.</p>
-        </form>
-    </div>    
-            </div>
+            
+            
+        
         </section>
         
-        <script src="" async defer></script>
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        
+        <!-- bootstrap Javascript -->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        
+        <!-- animated wow JS file -->
+        <script src="js/wow/wow.min.js"></script>
+        
+        <!-- Javascript file -->
+        <script src="js/script.js"></script>
     </body>
 </html>

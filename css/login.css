@@ -1,138 +1,94 @@
-* {
-	box-sizing: border-box;
-	
-}
-body {
-	min-height: 100vh;
-	min-width: 90vw;
-	overflow-x: hidden;	
+/* General Section */
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-.navbar a {
-	color: white !important;
+p {
+    color: #64707b;
+    font-size: 16px;
+    font-weight: 300;
 }
 
-.navbar-brand {
-	font-family: cursive;
+a:hover {
+    text-decoration: none;
 }
 
-footer {
-	background: #2c3645; 
-	padding-top: 5px;
-	color: white;
-}
+/*==============================================================================
 
-.img-foot img {
-	width: 30px;
-	height: 30px;
-}
+                        PARALLAX (Generic)
 
-.footer-contact input{
-  	margin: 8px 0;
-  	border: #23C1CF;
-  	border-radius: 8px;
-  	padding: 10px 20px;
-  	font-family: serif;
-}
+==============================================================================*/
 
-.footer-contact input[type=submit]{
-	background: #23C1CF;
-  	border: none;
-  	border-radius: 8px;
-  	color: white;
-  	cursor: pointer;
-}
-
-.col-sm-8 {
-	background: url(../images/background.png);
-	border-right: 2px solid #23C1CF;
-	color: black;
-	padding-top: 5px;
+.bg-parallax {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 
-.login-acc {
-	color: #fefefe;
-	text-shadow: #590e5e 1px 3px;
-	font-size: 45px;
+/*====================================================================
+                        LOGIN
+===================================================================*/
+
+#login-page {
+	height: 100%;
 }
 
-#loginForm a{
-	text-decoration: none;
-	color: #23C1CF;
+#login-bg-diagonal {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-image: url(../imgs/bg.jpg);
+    border-top: 790px solid transparent;
+    border-right: 100px solid #fff;
 }
 
-#loginForm input {
-  width: 80%;
-  margin: 10px 0;
-  border: 1px solid #23C1CF;
-  border-radius: 8px;
-  padding: 12px 20px;
-  font-family: serif;
-  font-weight: bold;
-
+#heading-primary {
+	background-color: #fff;
+	width: 250px;
+	margin: 0 auto;
+	border-radius: 20px;
+    margin-top: -500px;
 }
 
-#loginForm input[type=submit] {
-  background: #23C1CF;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  padding: 14px 16px;
-  cursor: pointer;
-  letter-spacing: 2px;
-
+#heading-primary-right {
+	background-color: deepskyblue;
+	width: 250px;
+	margin-left: 20%;
+	border-radius: 20px;
+    margin-top: 10%;
 }
 
+#login-bg-diagonal h1 {
+	font-size: 350%;
+	text-align: center;
+	color: deepskyblue;
+}
 
-#alert {
-	visibility: hidden;
-	min-width: 250px;
-	margin-left: -125px;
-	background-color: #333;
+#heading-primary-right h1 {
 	color: #fff;
 	text-align: center;
-	border-radius: 2px;
-	padding: 10px;
-	position: fixed;
-	z-index: 1;
-	left: 50%;
-	bottom: 30px;
-	font-size: 17px;
-	border-radius: 5px;
+}
+
+#content-box {
+    width: 100%;
+}
+
+.color-green{
+    color: green !important;
+} 
+
+@media (min-width: 768px) {
+	#content-box-outer {
+    margin-top: 50%;
 	}
-
-#alert.show {
-	visibility: visible;
-	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-	animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
-
-@media screen and (max-width: 500px) {
-body {
-	min-height: 100vh;
-	min-width: 100vw;
-	 
-}
-
+@media (max-width: 768px) {
+	#content-box-outer {
+    margin-top: 10%;
+	}
 }
